@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useState } from 'react';
 import '../styles/App.css';
+import MealsProvider from './MealsProvider';
+import MealsList from './MealsList';
+import Counter from './Counter';
 
 const MealsContext = createContext();
 
