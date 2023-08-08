@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 
 const todaysMeals = [
     { id: 1, name: 'Baked Beans' },
     { id: 2, name: 'Baked Sweet Potatoes' },
     { id: 3, name: 'Baked Potatoes' },
 ]
+
+export const MealsContext = createContext();
 
 const MealsProvider = ({ children }) => {
   const [meals, setMeals] = useState(todaysMeals);
