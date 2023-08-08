@@ -6,18 +6,21 @@ const todaysMeals = [
     { id: 3, name: 'Baked Potatoes' },
 ]
 
-const MealsProvider = () => {
-    const [meals, setMeals] = useState(todaysMeals);
+const MealsProvider = ({ children }) => {
+  const [meals, setMeals] = useState(todaysMeals);
 
-    const tickMeal = () => {
+  const tickMeal = (id) => {
+    const updatedMeals = meals.map((meal) => {
+      if (meal.id === id) {
+        return { ...meal, ticked: !meal.ticked };
+      }
+      return meal;
+    });
 
-    }
+    setMeals(updatedMeals);
+  };
 
-    return (
-        <div>
-            
-        </div>
-    )
+  return <MealsContext.Provider value={{ meals, tickMeal }}>{children}</MealsContext.Provider>;
 };
 
 export default MealsProvider;
