@@ -1,4 +1,5 @@
 import React from "react";
+import { MealsContext } from "./MealsProvider";
 
 const MealsList = () => {
   const { meals, tickMeal } = useContext(MealsContext);
